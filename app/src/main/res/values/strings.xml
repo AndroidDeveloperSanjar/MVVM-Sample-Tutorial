@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MVVM</string>
+    <string name="enter_current_pin">Enter current pin</string>
+    <string name="enter_new_pin">Enter new pin</string>
+    <string name="save">Save</string>
+    <string name="change_pin_code">Change Pin Code</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_pin">Confirm pin</string>
+
+</resources>

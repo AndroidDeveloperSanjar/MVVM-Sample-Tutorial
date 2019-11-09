@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.mvvm.ui.auth.AuthViewModel" />
+    </data>
+
+
+
+<RelativeLayout
+    android:id="@+id/root_layout"
+    tools:context=".ui.auth.LoginActivity"
+    android:layout_margin="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:text="@={viewmodel.email}"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:background="@drawable/edit_text_round_gray_background"
+            android:layout_width="match_parent"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:text="@={viewmodel.password}"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:background="@drawable/edit_text_round_gray_background"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#03A9F4"
+            android:layout_marginBottom="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="Forget Password?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:backgroundTint="#03A9F4"
+            android:onClick="@{viewmodel::onLoginButtonClick}"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="false"
+            android:text="Sign In"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"/>
+        <TextView
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:textColor="#03A9F4"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/linearLayout2"
+            android:textAlignment="center"
+            android:text="Don't have an account?\nSign Up Here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/progress_bar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
+
+</layout>
